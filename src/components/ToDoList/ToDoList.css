@@ -1,13 +1,18 @@
 .red-description {
   color: red;
+  cursor: pointer;
 }
 
 .green-description {
   color: green;
+  cursor: pointer;
+
 }
 
 .orange-description {
   color: orange;
+  cursor: pointer;
+
 }
 
 

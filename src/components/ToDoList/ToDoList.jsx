@@ -82,7 +82,7 @@ function ToDoList({setNewTodos, todos, setShowAdd, showAdd, setEditing, levelLis
 
     const handleSearch = () => {
         console.log(searchInput);
-        const tmpTodo = filterList.filter(item => {
+        const tmpTodo = todos.filter(item => {
             return (item.id.toString() === searchInput || item.name.includes(searchInput)) 
         })
         setFilterList(tmpTodo);

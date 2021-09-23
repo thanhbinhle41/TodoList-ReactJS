@@ -5,18 +5,8 @@ import AddToDo from './components/AddToDo/AddToDo'
 
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      name: 'Học ReactJS',
-      level: 'Nguy cấp'
-    },
-    {
-      id: 2,
-      name: 'Học ReactJS',
-      level: 'Nguy cấp'
-    }
-  ])
+  var localStorageData = JSON.parse(localStorage.getItem('todos'))
+  const [todos, setTodos] = useState(localStorageData === null ? [] : localStorageData);
 
   const [showAdd, setShowAdd] = useState(false);
   const [editing, setEditing] = useState(null);
@@ -27,12 +17,16 @@ function App() {
     'Nguy cấp' ,
     'Nhắc nhở',
     'Mai làm cũng được'
-  ]
+  ];
+
 
   useEffect(() => {
     setFilterList(todos)
+    localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos])
 
+
+ 
   return (
     <>
       <div className="App">
